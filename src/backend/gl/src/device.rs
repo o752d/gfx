@@ -84,7 +84,7 @@ impl Device {
             ShaderStage::Compute if can_compute => glow::COMPUTE_SHADER,
             _ => return Err(d::ShaderError::UnsupportedStage(stage.to_flag())),
         };
-
+        dbg!("debug from my crate");
         let name = unsafe { gl.create_shader(target) }.unwrap();
         unsafe {
             gl.shader_source(name, shader);
